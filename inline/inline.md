@@ -15,3 +15,18 @@ int main()
     cout << max(1, 3) << endl;
 }
 ```
+
+## 内联成员函数
+- 成员函数前有inline关键字
+- 成员函数定义在类内部
+
+```c++
+class testInline
+{
+public:
+    void func1(){}; //inline
+    void func2();
+};
+inline void testInline::func2() {} //inline
+```
+

@@ -1,0 +1,1 @@
+    // testStatic::n = 1;
