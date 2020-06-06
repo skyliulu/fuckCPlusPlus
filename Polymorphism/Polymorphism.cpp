@@ -7,10 +7,10 @@ class base
     int a;
 
 public:
-    base() { baseFunc1(); } //没有多态
-    virtual void baseFunc1() { cout << "base1" << endl; }
-    virtual void baseFunc2() { cout << "base1" << endl; }
-    void func() { baseFunc1(); } //多态
+    base() { Func1(); } //没有多态
+    virtual void Func1() { cout << "base" << endl; }
+    virtual void Func2() { cout << "base" << endl; }
+    void func() { Func1(); } //多态
 };
 
 class drive : public base
@@ -23,24 +23,41 @@ class drive1 : public base
     int b;
 
 public:
-    void baseFunc2() { cout << "drive1" << endl; }
-    virtual void baseFunc1() { cout << "drive1" << endl; }
+    void Func2() { cout << "drive1" << endl; }
+    virtual void Func1() { cout << "drive1" << endl; }
     //不加virtual也是虚函数，只要基类中是虚函数且同名同参数
-    virtual void drive1Func() { cout << "drive1" << endl; }
+};
+class drive2 : public base
+{
+    int b;
+
+public:
+    virtual void Func3() {}
+};
+class moreDrive : public drive,drive1
+{
+    int b;
+};
+class moreDrive1 : public drive1,drive2
+{
+    int b;
 };
 
 int main()
 {
     base A;
-    drive C;
-    drive1 B;
+    drive B;
+    drive1 C;
+    drive2 D;
+    moreDrive E;
+    moreDrive1 F;
     base *ptr;
     ptr = &A;
-    ptr->baseFunc1();
-    ptr->func();
-    ptr = &B;
-    ptr->baseFunc1();
-    ptr->func();
-    base &ptr2 = B;
-    ptr2.baseFunc1();
+    // ptr->baseFunc1();
+    // ptr->func();
+    // ptr = &B;
+    // ptr->baseFunc1();
+    // ptr->func();
+    // base &ptr2 = B;
+    // ptr2.baseFunc1();
 }
