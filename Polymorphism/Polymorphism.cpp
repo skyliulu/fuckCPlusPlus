@@ -42,6 +42,10 @@ class moreDrive1 : public drive1,drive2
 {
     int b;
 };
+class moreDrive2 : public drive,drive1,drive2
+{
+    int c;
+};
 
 int main()
 {
@@ -51,6 +55,7 @@ int main()
     drive2 D;
     moreDrive E;
     moreDrive1 F;
+    moreDrive2 G;
     base *ptr;
     ptr = &A;
     // ptr->baseFunc1();
