@@ -34,17 +34,20 @@ class drive2 : public base
 public:
     virtual void Func3() {}
 };
-class moreDrive : public drive,drive1
+class moreDrive : public drive, drive1
 {
     int b;
 };
-class moreDrive1 : public drive1,drive2
+class moreDrive1 : public drive1, drive2
 {
     int b;
 };
-class moreDrive2 : public drive,drive1,drive2
+class moreDrive2 : public drive1, drive2, drive
 {
     int c;
+
+public:
+    virtual void Func4() {}
 };
 
 int main()
