@@ -12,8 +12,11 @@ public:
     int set(int i) {}
     int get() const { return n; }
     int get() { return n; } //重载
+    void print() const;
 };
-
+void test::print() const {
+    cout<<n<<endl;
+}
 int main()
 {
     const test t1;
