@@ -1,6 +1,13 @@
 #include <iostream>
 
 using namespace std;
+
+void print(int & n) {
+    cout << "left reference "<<n<<endl;
+}
+void print(int && n) {
+    cout << "right reference "<<n<<endl;
+}
 int main() {
     int n = 4;
     int &ref = n;
@@ -21,5 +28,10 @@ int main() {
     // c_ref = 9;//error
     ref3 = 9;
     cout<<n<<endl;
-    return 0;
+    cout<<"右值引用测试"<<endl;
+    int && x = 5;
+    int y = 6;
+    print(10);
+    print(x);
+    print(y);
 }
