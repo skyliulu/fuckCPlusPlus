@@ -11,6 +11,7 @@ cout<<ref<<endl;//5
 int &ref2 = ref;
 cout<<ref2<<endl;//5
 ```
+<!-- more -->
 >引用必须初始化为某个变量
 ```c++
 int &ref2 = 2;//常量，error
