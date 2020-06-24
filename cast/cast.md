@@ -1,11 +1,11 @@
 # 强制类型转换
-
+c++ 11 中用static_cast、dynamic_cast、const_cast、reinterpret_cast来做强制类型转换。
 ## static_cast
 - 执行低风险的转换，比如整数，浮点数相互转换。
 - 不能再不同类型的指针之间相互转换。
 - 不执行运行时类型检查（转换安全性不如 dynamic_cast）
 - 可以将子类转化为父类，不能将父类转化为子类
-
+<!-- more -->
 ```c++
 class A {
 public:
