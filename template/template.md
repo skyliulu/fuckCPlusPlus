@@ -39,3 +39,36 @@ template <class T, int elementsNumber>
 - 派生出类模板
 - 普通类派生出类模板
 - 模板类派生出普通类
+
+### 类模板特化
+泛化模板中的一个特定类型的模板类，特化分为全特化和偏特化。
+- 全特化：所有的模板参数特化
+- 偏特化
+  - 个数偏特化：部分参数特化
+  - 范围偏特化：参数作用特化
+```c++
+//泛化
+template <typename T>
+class test {
+    T data;
+}
+template <typename T,typename T2>
+class test2 {
+    T data;
+}
+//全特化
+template<>
+class test<int> {
+    int data;
+}
+//参数个数偏特化
+template<T>
+class test2<T,int> {
+    int data;
+}
+//参数范围偏特化
+template<T>
+class test<T*> {
+    int data;
+}
+```
