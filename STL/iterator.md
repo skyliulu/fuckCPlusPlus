@@ -2,8 +2,7 @@
 
 - 迭代器是一种泛化的指针，将容器和算法粘合在一起
 - 迭代器是一种类似指针的对象，需要重载operator*()、operator->()、operator++()、operator++(T)等操作。
-- 迭代器类型：随机访问迭代器，双向迭代器，单项迭代器，输入迭代器，输出迭代器
-- 迭代器必须定义5种关联类型，以便能够回答STL算法问询的问题：
+- 迭代器必须定义5种关联类型，以便能够回答**STL算法问询的问题**（算法是看不到容器的）：
   ```c++
   struct _List_iterator {
   typedef ptrdiff_t                  difference_type; //距离类型
@@ -13,6 +12,14 @@
   typedef _Ref reference; //引用类型
   ```
 - 指针是退化的迭代器，但是却没有定义上述5种关联种类，当STL接受指针参数时，如何获取想要的结果呢？STL中使用iterator_traits（迭代器萃取机）来提迭代器/指针回答算法的问题。iterator_traits用以区分class iterator 和 non-class iterator（原生指针）
+
+## 迭代器分类
+迭代器类型：随机访问迭代器，双向迭代器，单项迭代器，输入迭代器，输出迭代器
+1. 输入迭代器: 
+2. 输出迭代器: 
+3. 单项迭代器: hashtable,forward-list
+4. 双向迭代器: rb-tree,list
+5. 随机访问迭代器：vector
 
 ## 迭代器失效
 
