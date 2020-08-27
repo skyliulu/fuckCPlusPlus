@@ -72,6 +72,23 @@ public:
         cout << "drive3 destructor called" << endl;
     }
 };
+class base1 {
+public:
+    void pubFunc() {
+        cout << "base1 pubFunc"<<endl;
+    }
+    base1()
+    {
+        cout << "base1 constructor called" << endl;
+    }
+    ~base1() {
+        cout << "base1 destructor called" << endl;
+    }
+};
+
+class mutilDrive : public base,base1 {
+
+};
 
 int main()
 {
@@ -87,4 +104,6 @@ int main()
     // d2.pubFunc();//error
     drive3 d3;
     // d3.pubFunc();//error
+    mutilDrive d4;
+    // d4.pubFunc();//语义不明确，错误
 }
